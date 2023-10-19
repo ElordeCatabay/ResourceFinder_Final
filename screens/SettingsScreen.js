@@ -5,7 +5,7 @@ import { TouchableOpacity } from 'react-native'
 import { signOut } from 'firebase/auth'
 import { auth } from '../config/firebase'
 import {COLORS, SIZES} from '../theme/theme'
-
+import { MaterialIcons } from '@expo/vector-icons';
 export default function SettingsScreen ({ navigation }) {
   const handleLogout = async () => {
     await signOut(auth)
@@ -20,58 +20,51 @@ export default function SettingsScreen ({ navigation }) {
   }
 
   return (
-    <SafeAreaView
-      style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#252C4A' }}
-    >
-      {/* Button for AboutUs */}
+    <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#101820FF' }}>
       <TouchableOpacity
         onPress={handleAboutUsNavigation}
-        style={{
-          padding: 10,
-          backgroundColor: '#252C4A',
-          borderRadius: 10,
-          marginBottom: 10,
-          borderWidth: 1,
-          borderColor: 'black'
-        }}
+        style={{ ...styles.button, marginBottom: 10 }}
       >
-        <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>
-          About Us
-        </Text>
+        <Text style={styles.buttonText}>About Us</Text>
+        <MaterialIcons name="info" size={30} color="black" style={styles.icon} />
       </TouchableOpacity>
 
-      {/* Button for Guidelines */}
       <TouchableOpacity
         onPress={handleGuidelinesNavigation}
-        style={{
-          padding: 10,
-          backgroundColor: '#252C4A',
-          borderRadius: 10,
-          marginBottom: 10,
-          borderWidth: 1,
-          borderColor: 'black'
-        }}
+        style={{ ...styles.button, marginBottom: 10 }}
       >
-        <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>
-          Guidelines
-        </Text>
+        <Text style={styles.buttonText}>Guidelines</Text>
+        <MaterialIcons name="list" size={30} color="black" style={styles.icon} />
       </TouchableOpacity>
 
-      {/* Logout Button */}
-      <TouchableOpacity
-        onPress={handleLogout}
-        style={{
-          padding: 10,
-          backgroundColor: 'red',
-          borderRadius: 10,
-          borderWidth: 1,
-          borderColor: 'black'
-        }}
-      >
-        <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>
-          Logout
-        </Text>
+    
+      <TouchableOpacity onPress={handleLogout} style={styles.button}>
+        <Text style={styles.buttonText}>Logout</Text>
+        <MaterialIcons name="logout" size={30} color="red" style={styles.icon} />
       </TouchableOpacity>
     </SafeAreaView>
-  )
-}
+  );
+};
+
+const styles = {
+  button: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#AEE8F5',
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: 'black',
+    padding: 20,
+    margin: 10,
+    width: '90%',
+  },
+  buttonText: {
+    color: 'black',
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginRight: 10,
+  },
+  icon: {
+    marginLeft: 'auto',
+  },
+};

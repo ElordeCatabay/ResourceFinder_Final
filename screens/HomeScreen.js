@@ -18,7 +18,11 @@ import SubjectCard from '../components/SubjectCard'
 
 
 export default function HomeScreen () {
-  const [activeCategory, setActiveCategory] = useState('Burger')
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const filteredEvents =
+  selectedCategory === 'All'
+    ? foodItems
+    : foodItems.filter((event) => event.category === selectedCategory);
   return (
     <View className='flex-1 relative'>
       <Image
@@ -61,7 +65,7 @@ export default function HomeScreen () {
         >
           {
             categories.map((category, index)=>{
-              let isActive = category == activeCategory;
+              let isActive = category.categoryName === selectedCategory;
               let textClass = isActive? ' font-bold': '';
               return (
                 <Animatable.View
@@ -70,10 +74,10 @@ export default function HomeScreen () {
                   key={index}>
                       <TouchableOpacity
                         className="mr-9"
-                        onPress={()=> setActiveCategory(category)}
+                        onPress={() => setSelectedCategory(category.categoryName)}
                       >
                         <Text className={"text-white text-base tracking-widest "+textClass}>
-                          {category}
+                          {category.categoryName}
                         </Text>
                         {
                           isActive? (
@@ -95,7 +99,7 @@ export default function HomeScreen () {
           horizontal showsHorizontalScrollIndicator={false}
         >
           {
-            foodItems.map((item, index)=> <SubjectCard item={item} index={index} key={index} />)
+            filteredEvents.map((item, index)=> <SubjectCard item={item} index={index} key={index} />)
           }
         </ScrollView>
       </SafeAreaView>

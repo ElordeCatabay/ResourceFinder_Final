@@ -14,7 +14,7 @@ import useAuth from '../hooks/useAuth'
 import { ProfileScreen, Quiz, Latest } from '../screens/BottomTabNav'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Entypo, AntDesign, MaterialIcons, Ionicons } from '@expo/vector-icons'
-import FoodDetailsScreen from '../screens/FoodDetailsScreen'
+import FoodDetailsScreen from '../screens/ReviewerDetailsScreen'
 import { LogBox } from 'react-native'
 
 const Stack = createNativeStackNavigator()
@@ -114,11 +114,10 @@ export default function AppNavigation () {
                 <View
                   style={{ alignItems: 'center', justifyContent: 'center' }}
                 >
-                  <Entypo
-                    name='new'
-                    size={30}
-                    color={focused ? '#16247d' : '#111'}
-                  />
+                 <Entypo 
+                 name="open-book"
+                 size={30}
+                 color={focused ? '#16247d' : '#111'} />
                 </View>
               )
             }}

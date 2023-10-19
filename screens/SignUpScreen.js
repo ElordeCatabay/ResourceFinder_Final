@@ -127,16 +127,7 @@ export default function SignUpScreen() {
                     Sign Up
                 </Text>
             </TouchableOpacity>
-        </View>
-        <Text className="text-xl text-gray-700 font-bold text-center py-5">
-            Or
-        </Text>
-        <View className="flex-row justify-center space-x-12">
-            <TouchableOpacity className="p-2 bg-gray-100 rounded-2xl">
-                <Image source={require('../assets/icons/google.png')} 
-                    className="w-10 h-10" />
-            </TouchableOpacity>
-        </View>
+        </View>  
         <View className="flex-row justify-center mt-7">
             <Text className="text-gray-500 font-semibold">Already have an account?</Text>
             <TouchableOpacity onPress={()=> navigation.navigate('Login')}>

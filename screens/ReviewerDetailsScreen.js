@@ -2,7 +2,6 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ChevronLeftIcon } from 'react-native-heroicons/solid'
-import { HeartIcon, MinusIcon, PlusIcon } from 'react-native-heroicons/outline'
 import { useNavigation } from '@react-navigation/native'
 import * as Animatable from 'react-native-animatable'
 
@@ -60,7 +59,7 @@ export default function FoodDetailsScreen (props) {
             {item.desc}
           </Animatable.Text>
         </View>
-        {/* add to cart button */}
+        
         <View className='mx-4 flex-row justify-between items-center'>
          
           <Animatable.View delay={100} animation='slideInRight'>
