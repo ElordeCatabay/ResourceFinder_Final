@@ -4,14 +4,6 @@ export const categories = [
     categoryName: 'All'
   },
   {
-    id: '2',
-    categoryName: 'Popular'
-  },
-  {
-    id: '3',
-    categoryName: 'Recommended'
-  },
-  {
     id: '4',
     categoryName: 'Programming'
   },

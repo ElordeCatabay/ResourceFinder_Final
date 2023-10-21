@@ -44,10 +44,10 @@ export default function HomeScreen () {
         </View>
        {/* Punch line */}
         <View style={{ marginTop: 24, paddingHorizontal: 16 }}>
-          <Text style={{ fontSize: 60, fontWeight: 'bold', color: '#333' }}>
+          <Text style={{ fontSize: 60, fontWeight: 'bold', color: '#3498db' }}>
             School
           </Text>
-          <Text style={{ fontSize: 40, fontWeight: 'bold', color: '#333' }}>
+          <Text style={{ fontSize: 40, fontWeight: 'bold', color: '#3498db' }}>
             <Text style={{ fontWeight: '800' }}>Resource</Text> Finder
           </Text>
         </View>
